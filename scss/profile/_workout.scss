@@ -1,0 +1,214 @@
+.workout {
+    display: flex;
+    flex-direction: column;
+}
+
+.workout-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #32343A;
+    padding: 24px 0 20px 16px;
+    .workout__col {
+        p {
+            color: #A9A9A9;
+        }
+        &:nth-child(1) {
+            p {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.workout__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #32343A;
+    padding: 20px 0 19px 16px;
+    &:last-child {
+        border-bottom: 1px solid #32343A;
+    }
+}
+
+.workout-disabled {
+    opacity: 0.4;
+}
+
+.workout-active {
+    padding-top: 16px;
+    padding-bottom: 15px;
+    .workout__col:nth-child(6) {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 88px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #FFFFFF;
+            border: 1px solid #838380;
+            transition: all .3s linear;
+            &:hover {
+                color: $yel;
+                border-color: $yel;
+                transition: all .3s linear;
+            }
+        }
+    }
+}
+
+.workout-empty {
+    .workout__col {
+        a {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            color: $yel;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-top: 1px dashed $yel;
+                transition: all .3s linear;
+            }
+            &:hover {
+                &::before {
+                    opacity: 0;
+                    transition: all .3s linear;
+                }
+            }
+        }
+    }
+    .workout__col:nth-child(6) {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 24px;
+                height: 24px;
+                transition: all .3s linear;
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: $yel;
+                        transition: all .3s linear;
+                    }
+                }
+            }
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.workout__col {
+    p {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 130%;
+        color: #FEFEFE;
+    }
+    &:nth-child(1) {
+        flex-basis: 22.99%;
+        p {
+            font-weight: 600;
+        }
+    }
+    &:nth-child(2) {
+        flex-basis: 14.78%;
+    }
+    &:nth-child(3) {
+        flex-basis: 13.301%;
+    }
+    &:nth-child(4) {
+        flex-basis: 20.198%;
+    }
+    &:nth-child(5) {
+        flex-basis: 11.987%;
+    }
+    &:nth-child(6) {
+        flex-basis: 14.45%;
+    }
+}
+
+.workout-mob-stats {
+    display: none;
+}
+
+@media (max-width: 514px) {
+    .workout {
+        margin: 0 -15px;
+    }
+    .workout-head {
+        display: none;
+    }
+    .workout-active, .workout-disabled {
+        .workout__col:nth-child(1) {
+            flex-basis: 35%;
+            p {
+                display: none;
+            }
+            .workout-mob-stats {
+                display: block;
+                p {
+                    display: block;
+                    font-size: 14px;
+                    &:last-child {
+                        font-weight: normal;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .workout__col:nth-child(2) {
+            flex-basis: 27%;
+            p {
+                display: none;
+            }
+            .workout-mob-stats {
+                display: block;
+                p {
+                    font-size: 12px;
+                    display: block;
+                }
+            }
+        }
+    }
+    .workout__col {
+        &:last-child {
+            flex-basis: 22.2%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .workout__row {
+        padding-right: 15px;
+    }
+    .workout__col:nth-child(1) {
+        flex-basis: 35%;
+    }
+    .workout__col:nth-child(2) {
+        flex-basis: 27%;
+    }
+    .workout__col:nth-child(3) {
+        display: none;
+    }
+    .workout__col:nth-child(4) {
+        display: none;
+    }
+    .workout__col:nth-child(5) {
+        display: none;
+    }
+}

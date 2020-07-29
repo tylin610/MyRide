@@ -1,0 +1,107 @@
+.interlayer {
+    background: #181C24;
+    padding: 38px 0;
+}
+
+.interlayer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interlayer__title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 20px;
+}
+
+.interlayer__title-img {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 24px;
+}
+
+.interlayer__title-text {
+    text-align: left;
+    h2 {
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 23px;
+    }
+    p {
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 120%;
+        color: #FFFFFF;
+    }
+}
+
+.interlayer__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $yel;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #020202;
+    border: 1px solid $yel;
+    width: 100%;
+    max-width: 352px;
+    height: 56px;
+    transition: all .3s linear;
+    &:hover {
+        background: transparent;
+        color: $yel;
+        transition: all .3s linear;
+    }
+}
+
+@media (max-width: 800px) {
+    .interlayer__inner {
+        flex-wrap: wrap;
+    }
+    .interlayer__btn {
+        margin-left: 59px;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 514px) {
+    .interlayer {
+        padding: 24px 0;
+    }
+    .interlayer__title {
+        position: relative;
+    }
+    .interlayer__title-text h2 {
+        font-size: 18px;
+        padding-left: 35px;
+        margin-bottom: 12px;
+    }
+    .interlayer__title-text p {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .interlayer__title-img {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        svg {
+            width: 22px;
+            height: 30px;
+        }
+    }
+    .interlayer__btn {
+        margin-left: 0;
+        max-width: 216px;
+        height: 40px;
+        font-size: 16px;
+    }
+}

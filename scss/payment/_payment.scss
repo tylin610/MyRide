@@ -1,0 +1,120 @@
+.payment {
+    padding-top: 156px;
+    margin-bottom: 77px;
+    h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 56px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.payment__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 150px;
+    img {
+        max-width: 100%;
+    }
+}
+
+.payment__form {
+    width: 100%;
+    max-width: 352px;
+    .form__submit {
+        max-width: 100%;
+        button {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.payment__form-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .form__input {
+        max-width: 48%;
+    }
+}
+
+.payment__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 32px;
+    p {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 130%;
+        color: #DDDDDD;
+        &:last-child {
+            font-weight: 600;
+        }
+    }
+}
+
+.payment__mob {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .payment h1 {
+        font-size: 36px;
+    }
+    .payment__img {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 710px) {
+    .payment {
+        padding-top: 80px;
+        margin-bottom: 40px;
+    }
+    .payment__img {
+        display: none;
+    }
+    .payment__inner {
+        justify-content: center;
+    }
+    .payment__form {
+        max-width: 100%;
+    }
+    .payment__mob {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 32px;
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 514px) {
+    .payment h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+}

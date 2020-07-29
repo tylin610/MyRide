@@ -1,0 +1,311 @@
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 999;
+    overflow: auto;
+}
+
+.modal {
+    display: none;
+    width: 100%;
+    max-width: 352px;
+    padding: 40px 64px;
+    background: #181C24;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 100px 0;
+}
+
+.subscribe {
+    p {
+        margin-bottom: 16px;
+    }
+    .modal_subtext {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        color: #DDDDDD;
+        max-width: 289px;
+        margin: 0 auto 32px;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 24px;
+        height: 24px;
+    }    
+    svg {
+        line {
+            stroke: white;
+            transition: all .3s linear;
+        }
+    }
+    &:hover {
+        svg {
+            line {
+                stroke: $yel;
+                transition: all .3s linear;
+            }
+        }
+    }
+}
+
+.modal__inner {
+    width: 100%;
+    p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+        a {
+            color: $yel;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-top: 1px dashed $yel;
+                transition: all .3s linear;
+            }
+            &:hover {
+                &::before {
+                    opacity: 0;
+                    transition: all .3s linear;
+                }
+            }
+        }
+    }
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.form__input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    input {
+        width: 100%;
+        outline: none;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #797B82;
+        font-family: 'Oswald';
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 130%;
+        color: #ffffff;
+        padding: 19px 0;
+        &::placeholder {
+            font-family: 'Oswald';
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 130%;
+            color: #DDDDDD;
+        }
+        &:focus {
+            border-color: $yel;
+        }
+    }
+}
+
+.form__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        margin-top: 40px;
+        width: 100%;
+        max-width: 208px;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: center;
+        color: #020202;
+        background: $yel;
+        border: 1px solid $yel;
+        outline: none;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: all .3s linear;
+        cursor: pointer;
+        &:hover {
+            background: transparent;
+            color: $yel;
+            transition: all .3s linear;
+        }
+    }
+}
+
+.form__bot {
+    p {
+        margin-bottom: 16px;
+    }
+}
+
+.form__bot-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #838380;
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+        transition: all .3s linear;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border-color: $yel;
+            transition: all .3s linear;
+            svg {
+                path {
+                    fill: $yel;
+                    transition: all .3s linear;
+                }
+            }
+        }
+    }
+}
+
+.form__check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+    p {
+        text-align: left;
+    }
+    input {
+        display: none;
+        width: 0;
+        height: 0;
+        border: 0;
+        background: transparent;
+    }
+    input:checked ~ label {
+        .form__check-square {
+            span {
+                opacity: 1;
+            }
+        }
+    }
+    label {
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        &:hover {
+            .form__check-square {
+                border-color: $yel;
+                transition: all .3s linear;
+            }
+        }
+        p {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            color: #DDDDDD;
+            margin: 0; 
+        }
+    }
+}
+
+.form__check-square {
+    min-width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    border: 1px solid #838380;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+    transition: all .3s linear;
+    span {
+        width: 10px;
+        height: 10px;
+        background: $yel;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 514px) {
+    .modal {
+        padding: 32px 0 28px;
+        max-width: 100%;
+        margin: 50px 0;
+    }
+    .modal__inner {
+        padding: 0 16px;
+    }
+    .modal__inner p {
+        margin-bottom: 20px;
+    }
+    .form__submit button {
+        font-size: 16px;
+        height: 40px;
+        margin-top: 24px;
+    }
+    .form__bot-social a {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+        svg {
+            max-width: 50%;
+            max-height: 50%;
+        }
+    }
+    .form__bot p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    .modal__close {
+        top: 16px;
+        right: 16px;
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .subscribe {
+        .modal_subtext {
+            font-size: 14px;
+            margin: 0 auto 8px;
+        }
+    }
+}
