@@ -227,7 +227,14 @@ $(function() {
         responsiveHeight: 330,
         dragAndMove: true,
         dragAndMoveKey: 'YWx2YXJvdHJpZ28uY29tX0EyMlpISmhaMEZ1WkUxdmRtVT0wWUc=',
-        controlArrows: false
+        controlArrows: false,
+        parallax: true,
+        parallaxKey: 'YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ==',
+        parallaxOptions: {
+            type: 'reveal',
+            percentage: 62,
+            property: 'translate'
+        },
     });
 
 });
