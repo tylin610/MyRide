@@ -13,8 +13,11 @@
             -webkit-text-stroke: 1.5px #ffffff;
             text-stroke: 1.5px #ffffff;
             max-height: 300px;
-            transition: all .7s linear;
+            transition: all 1s linear;
             &:last-child {
+                background: #ffffff;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 visibility: visible;
                 transition-delay: .7s;
             }
@@ -104,6 +107,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
+            max-height: unset;
             text-align: center;
             color: #ffffff;
         }
