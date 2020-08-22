@@ -247,6 +247,9 @@ $(document).ready(function () {
             if (progress >= 100 || loadedImg == imagesCount) {
                 preloader.delay(400).fadeOut('slow');
                 dBody.css('overflow', '');
+                setTimeout(function() {
+                    $('.section:nth-child(1)').addClass('firstSetcAnimated');
+                }, 700)
             }
             $(".preload h2").circularProgress('animate', progress, 500);
         }

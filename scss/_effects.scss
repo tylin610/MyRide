@@ -1,20 +1,36 @@
 .section {
     background-position: center;
     .efTitle1 {
-        transition: all .7s linear;
+        transition: all .5s linear;
         transform: translate(0, 100px);
         opacity: 0;
+    }
+}
+
+.section.firstSetcAnimated {
+    .section1__inner1 {
+        h2 {
+            -webkit-text-stroke: 1.5px #ffffff;
+            text-stroke: 1.5px #ffffff;
+            max-height: 300px;
+            transition: all .7s linear;
+            &:last-child {
+                visibility: visible;
+                transition-delay: .7s;
+            }
+        }
     }
 }
 
 .section.effect {
     .section-mask {
         visibility: visible;
-        transition: all .7s linear;
+        transition: all .5s linear;
         background: rgba(#000, .6);
     }
     .efTitle1 {
-        transition: all .7s linear;
+        transition: all .5s linear;
+        transition-delay: .5s;
         transform: translate(0, 0px);
         opacity: 1;
     }
@@ -71,4 +87,25 @@
 
 .section4__inner1 {
     display: none;
+}
+
+.section1__inner1 {
+    position: relative;
+    h2 {
+        color: transparent;
+        -webkit-text-stroke: 1.5px #ffffff;
+        text-stroke: 1.5px #ffffff;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .5s linear;
+        &:last-child {
+            visibility: hidden;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+        }
+    }
 }
