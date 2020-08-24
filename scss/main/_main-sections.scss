@@ -136,6 +136,7 @@
     position: relative;
     padding-left: 15px;
     h3 {
+        display: none !important;
         font-style: normal;
         font-weight: 700;
         font-size: 56px;
@@ -147,6 +148,7 @@
     }
     p {
         position: absolute;
+        z-index: 1;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -163,6 +165,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 70%;
     img {
         max-width: 100%;
         &:first-child {
@@ -481,8 +484,10 @@
     }
     .section4-img {
         width: 100%;
+        max-width: 100%;
     }
     .section4-container h3 {
+        display: block !important;
         margin-bottom: 24px;
         max-width: 100%;
         font-size: 36px;

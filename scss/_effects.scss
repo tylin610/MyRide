@@ -37,6 +37,43 @@
         transform: translate(0, 0px);
         opacity: 1;
     }
+    .section4-img::before {
+        max-height: 0;
+        transition: all .5s linear;
+    }
+    .section4-container p::before {
+        max-width: 0;
+        transition: all .5s linear;
+    }
+}
+
+.section4-img {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 1000px;
+        background: #090C12;
+        transition: all .5s linear;
+    }
+}
+
+.section4-container p {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 1000px;
+        background: #090C12;
+        transition: all .5s linear;
+    }
 }
 
 .section.after-effect {
@@ -82,28 +119,27 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transition: all 1s linear;
-    transform: translate(-50%, -50%);
+    transition: all .7s linear;
+    transform: translate(-50%, 130%);
     z-index: 1;
+    &.animated {
+        transform: translate(-50%, -50%);
+    }
     span {
         color: $yel;
-        transition: all 1s linear;
+        transition: all .7s linear;
     }
     &.transp {
         top: 200px;
-        transition: all 1s linear;
+        transition: all .7s linear;
         color: transparent;
         -webkit-text-stroke: 1.5px #50535C;
         text-stroke: 1.5px #50535C;
         span {
             color: transparent;
-            transition: all 1s linear;
+            transition: all .7s linear;
         }
     }
-}
-
-.section4__inner1 {
-    display: none;
 }
 
 .section1__inner1 {
@@ -128,6 +164,38 @@
     }
 }
 
+.sections-subtitle1 {
+    visibility: hidden;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    max-width: 480px;
+    margin-right: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 15px;
+    transform: translate(0, -50%);
+    max-height: 0;
+    transition: all 1s linear;
+    opacity: 0;
+    overflow: hidden;
+    &.animated {
+        visibility: visible;
+        max-height: 400px;
+        opacity: 1;
+        transition: all 1s linear;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sections-subtitle1 {
+        display: none;
+    }
+}
 @media (max-width: 767px) {
     .sections-title1 {
         font-size: 54px;
@@ -143,5 +211,8 @@
         &.transp {
             font-size: 20px;
         }
+    }
+    .sections-subtitle1 {
+        font-size: 20px;
     }
 }
