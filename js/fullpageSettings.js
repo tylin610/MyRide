@@ -9,11 +9,12 @@ $(function () {
             $('.section').removeClass('after-effect');
             $('.section:nth-child(' + indexOfSection + ')').addClass('effect');
 
+            if (indexOfSection > 2 && indexOfSection < 10) {
+                $('.sections-subtitle1').addClass('animated');
+            }
             if (indexOfSection > 1 && indexOfSection < 10) {
                 $('.sections-title1').fadeIn();
-                setTimeout(function () {
-                    $('.section4__inner1').fadeIn();
-                }, 3000);
+                $('.sections-title1').addClass('animated');
             }
 
             if ($('.section1').hasClass('active')) {
@@ -26,17 +27,25 @@ $(function () {
             var leavingSection = origin.index + 1;
             $('.section:nth-child(' + leavingSection + ')').removeClass('effect');
             $('.section:nth-child(' + leavingSection + ')').addClass('after-effect');
-            // if (leavingSection >= 3 && leavingSection <= 9) {
-            //     $('.sections-title1').addClass('active');
-            // }
-            // if (leavingSection == 3 && direction == 'up') {
-            //     $('.sections-title1').fadeOut('fast');
-            // }
+            if (leavingSection == 3 && direction == 'up') {
+                $('.sections-subtitle1').removeClass('animated');
+            }
+            if (leavingSection == 2 && direction == 'up') {
+                $('.sections-title1').fadeOut();
+            }
+            if (leavingSection >= 3 && leavingSection <= 9) {
+                $('.sections-title1').addClass('transp');
+                $('.sections-subtitle1').fadeIn();
+            }
+            if (leavingSection == 3 && direction == 'up') {
+                $('.sections-title1').removeClass('transp');
+            }
             if (leavingSection == 2 && direction == 'down') {
                 $('.sections-title1').addClass('transp');
             }
             if (leavingSection == 9 && direction == 'down') {
                 $('.sections-title1').fadeOut();
+                $('.sections-subtitle1').fadeOut();
             }
             console.log(leavingSection);
         },
