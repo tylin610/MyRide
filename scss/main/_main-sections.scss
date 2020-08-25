@@ -164,8 +164,9 @@
 .section4-img {
     display: flex;
     align-items: center;
-    justify-content: center;
-    max-width: 70%;
+    justify-content: flex-end;
+    max-width: 100%;
+    position: relative;
     img {
         max-width: 100%;
         &:first-child {
@@ -487,10 +488,10 @@
         max-width: 100%;
     }
     .section4-container h3 {
-        display: block !important;
         margin-bottom: 24px;
         max-width: 100%;
         font-size: 36px;
+        display: none;
     }
     .section4-container p {
         font-size: 18px;
@@ -629,9 +630,12 @@
     }
     .section4-img {
         width: 100%;
+        max-width: 100%;
+        margin-left: 0 !important;
         img {
             width: 100%;
-            &:first-child {
+            max-width: 100%;
+            &:nth-child(2) {
                 display: none;
             }
             &:last-child {
