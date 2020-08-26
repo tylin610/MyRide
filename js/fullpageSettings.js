@@ -41,6 +41,36 @@ $(function () {
                 $('.sections-title3').addClass('transp');
             }
 
+            if (indexOfSection == 16) {
+                $('.sections-title4').fadeIn();
+                $('.sections-title4').addClass('animated');
+            }
+
+            if (indexOfSection == 18) {
+                $('.sections-title5').fadeIn();
+                $('.sections-title5').addClass('animated');
+            }
+
+            if (indexOfSection == 20) {
+                $('.sections-title6').fadeIn();
+                $('.sections-title6').addClass('animated');
+            }
+
+            if (indexOfSection == 17) {
+                $('.sections-title4').fadeIn();
+                $('.sections-title4').addClass('transp');
+            }
+
+            if (indexOfSection == 19) {
+                $('.sections-title5').fadeIn();
+                $('.sections-title5').addClass('transp');
+            }
+
+            if (indexOfSection == 21) {
+                $('.sections-title6').fadeIn();
+                $('.sections-title6').addClass('transp');
+            }
+
             if ($('.section1').hasClass('active')) {
                 $('.header').slideUp();
             } else {
@@ -100,6 +130,30 @@ $(function () {
                 $('.sections-title3').removeClass('transp');
             }
 
+            if (leavingSection == 16 && direction == 'up') {
+                $('.sections-title4').fadeOut();
+            }
+
+            if (leavingSection == 18 && direction == 'up') {
+                $('.sections-title5').fadeOut();
+            }
+
+            if (leavingSection == 20 && direction == 'up') {
+                $('.sections-title6').fadeOut();
+            }
+
+            if (leavingSection == 17 && direction == 'up') {
+                $('.sections-title4').removeClass('transp');
+            }
+
+            if (leavingSection == 19 && direction == 'up') {
+                $('.sections-title5').removeClass('transp');
+            }
+
+            if (leavingSection == 21 && direction == 'up') {
+                $('.sections-title6').removeClass('transp');
+            }
+
             if (leavingSection == 2 && direction == 'down') {
                 $('.sections-title1').addClass('transp');
             }
@@ -136,6 +190,27 @@ $(function () {
             }
             if (leavingSection == 15 && direction == 'down') {
                 $('.sections-title3').fadeOut();
+            }
+
+            if (leavingSection == 16 && direction == 'down') {
+                $('.sections-title4').addClass('transp');
+            }
+            if (leavingSection == 17 && direction == 'down') {
+                $('.sections-title4').fadeOut();
+            }
+
+            if (leavingSection == 18 && direction == 'down') {
+                $('.sections-title5').addClass('transp');
+            }
+            if (leavingSection == 19 && direction == 'down') {
+                $('.sections-title5').fadeOut();
+            }
+
+            if (leavingSection == 20 && direction == 'down') {
+                $('.sections-title6').addClass('transp');
+            }
+            if (leavingSection == 21 && direction == 'down') {
+                $('.sections-title6').fadeOut();
             }
         },
         css3: true,
