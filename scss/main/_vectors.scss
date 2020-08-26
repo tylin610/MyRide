@@ -11,6 +11,35 @@
         max-width: 0;
         transition: all .5s linear;
     }
+    .effect__img-v {
+        transition: all .7s linear;
+        &:nth-child(1) {
+            right: 11%;
+        }
+        &:nth-child(2) {
+            left: 11%;
+        }
+    }
+    .effect__img {
+        transition: all .7s linear;
+        opacity: 1;
+    }
+    .effect__item {
+        opacity: 1;
+        transition: all .5s linear;
+        &:nth-child(1) {
+            transition-delay: 1.5s;
+        }
+        &:nth-child(2) {
+            transition-delay: .5s;
+        }
+        &:nth-child(3) {
+            transition-delay: 1s;
+        }
+        &:nth-child(4) {
+            transition-delay: 2s;
+        }
+    }
 }
 
 .vectors1 {
