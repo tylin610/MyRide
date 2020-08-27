@@ -53,7 +53,13 @@
         }
     }
     
-    .bike__img, .index__slider {
+    .bike__img {
+        left: 50%;
+        opacity: 1;
+        transition: all .3s linear;
+        transition-delay: 1s;
+    }
+    .index__slider {
         opacity: 1;
         transition: all .3s linear;
         transition-delay: 1s;
@@ -72,6 +78,70 @@
             transition-delay: 2s;
         }
     }
+    .bonus__item {
+        &:nth-child(1) {
+            .bonus__item-img {
+                opacity: 1;
+                transition: all .4s linear;
+                transition-delay: .7s;
+            }
+            .bonus__item-text {
+                opacity: 1;
+                transition: all .4s linear;
+                transition-delay: 1.4s;
+            }
+        }
+        &:nth-child(2) {
+            .bonus__item-img {
+                opacity: 1;
+                transition: all .4s linear;
+                transition-delay: 2.1s;
+            }
+            .bonus__item-text {
+                opacity: 1;
+                transition: all .4s linear;
+                transition-delay: 2.8s;
+            }
+        }
+    }
+    .bonus__item-img {
+        .bonus__img1 {
+            left: 10%;
+            opacity: 1;
+            transition: all .4s linear;
+            transition-delay: 1s;
+        }
+        .bonus__img2 {
+            right: 10%;
+            opacity: 1;
+            transition: all .4s linear;
+            transition-delay: 1s;
+        }
+        .bonus__img3 {
+            right: 5%;
+            opacity: 1;
+            transition: all .4s linear;
+            transition-delay: 2.4s;
+        }
+        .bonus__img4 {
+            left: 15%;
+            opacity: 1;
+            transition: all .4s linear;
+            transition-delay: 2.4s;
+        }
+    }
+    .trener__wr {
+        transform: translateX(0px);
+        transition: all .4s linear;
+        opacity: 1;
+    }
+}
+
+.trener__wr {
+    overflow: hidden;
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all .4s linear;
 }
 
 .bike__inner, .index__inner {
@@ -186,6 +256,11 @@
         transform: translate(0px, 200px);
         opacity: 0;
         transition: all .3s linear;
+    }
+    .trener__wr {
+        transform: translate(0px, 400px);
+        transition: all .4s linear;
+        opacity: 1;
     }
 }
 .section4-container {
