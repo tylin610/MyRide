@@ -1,4 +1,3 @@
-
 $(function () {
     new fullpage('#fullpage', {
         anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -8,6 +7,31 @@ $(function () {
             $('.section').removeClass('effect');
             $('.section').removeClass('after-effect');
             $('.section:nth-child(' + indexOfSection + ')').addClass('effect');
+
+            // section - Num of SECTION
+            // selectos - element to change
+            // todo - fadeIn, fadeOut, addClass, removeClass
+            // className - on remove or add
+            function stoppedSection(section, selector, todo, className) {
+
+                if (todo == 'fadeOut'){
+                    if (indexOfSection == section) {
+                        $(selector).fadeOut();
+                    }
+                } else if(todo == 'fadeIn') {
+                    if (indexOfSection == section) {
+                        $(selector).fadeIn();
+                    }
+                } else if(todo == 'addClass') {
+                    if (indexOfSection == section) {
+                        $(selector).addClass(className);
+                    }
+                } else if(todo == 'removeClass') {
+                    if (indexOfSection == section) {
+                        $(selector).removeClass(className);
+                    }
+                }
+            }
 
             if (indexOfSection > 2 && indexOfSection < 6) {
                 $('.sections-subtitle1').addClass('animated');
@@ -22,15 +46,16 @@ $(function () {
                 $('.sections-title2').addClass('animated');
             }
 
-            if (indexOfSection == 13) {
-                $('.sections-title3').fadeIn();
-                $('.sections-title3').addClass('animated');
-            }
-
             if (indexOfSection >= 3 && indexOfSection <= 9) {
                 $('.sections-title1').addClass('transp');
                 $('.sections-subtitle1').fadeIn();
             }
+
+            if (indexOfSection >= 8 && indexOfSection <= 9) {
+                $('.sections-title1').addClass('transp');
+                $('.sections-subtitle3').fadeIn();
+            }
+
             if (indexOfSection >= 11 && indexOfSection <= 12) {
                 $('.sections-title2').fadeIn();
                 $('.sections-title2').addClass('transp');
@@ -41,35 +66,26 @@ $(function () {
                 $('.sections-title3').addClass('transp');
             }
 
-            if (indexOfSection == 16) {
-                $('.sections-title4').fadeIn();
-                $('.sections-title4').addClass('animated');
-            }
+            stoppedSection(13, '.sections-title3', 'fadeIn');
+            stoppedSection(13, '.sections-title3', 'addClass', 'animated');
 
-            if (indexOfSection == 18) {
-                $('.sections-title5').fadeIn();
-                $('.sections-title5').addClass('animated');
-            }
+            stoppedSection(16, '.sections-title4', 'fadeIn');
+            stoppedSection(16, '.sections-title4', 'addClass', 'animated');
 
-            if (indexOfSection == 20) {
-                $('.sections-title6').fadeIn();
-                $('.sections-title6').addClass('animated');
-            }
+            stoppedSection(18, '.sections-title5', 'fadeIn');
+            stoppedSection(18, '.sections-title5', 'addClass', 'animated');
 
-            if (indexOfSection == 17) {
-                $('.sections-title4').fadeIn();
-                $('.sections-title4').addClass('transp');
-            }
+            stoppedSection(20, '.sections-title6', 'fadeIn');
+            stoppedSection(20, '.sections-title6', 'addClass', 'animated');
 
-            if (indexOfSection == 19) {
-                $('.sections-title5').fadeIn();
-                $('.sections-title5').addClass('transp');
-            }
+            stoppedSection(17, '.sections-title4', 'fadeIn');
+            stoppedSection(17, '.sections-title4', 'addClass', 'transp');
 
-            if (indexOfSection == 21) {
-                $('.sections-title6').fadeIn();
-                $('.sections-title6').addClass('transp');
-            }
+            stoppedSection(19, '.sections-title5', 'fadeIn');
+            stoppedSection(19, '.sections-title5', 'addClass', 'transp');
+
+            stoppedSection(21, '.sections-title6', 'fadeIn');
+            stoppedSection(21, '.sections-title6', 'addClass', 'transp');
 
             if ($('.section1').hasClass('active')) {
                 $('.header').slideUp();
@@ -82,136 +98,100 @@ $(function () {
             $('.section:nth-child(' + leavingSection + ')').removeClass('effect');
             $('.section:nth-child(' + leavingSection + ')').addClass('after-effect');
             console.log(leavingSection);
-            if (leavingSection == 3 && direction == 'up') {
-                $('.sections-subtitle1').removeClass('animated');
+
+            // section - Num of SECTION
+            // directionTo - up,down
+            // selectos - element to change
+            // todo - fadeIn, fadeOut, addClass, removeClass
+            // className - on remove or add
+            function leaveSection(section, directionTo, selector, todo, className) {
+
+                if (todo == 'fadeOut'){
+                    if (leavingSection == section && direction == directionTo) {
+                        $(selector).fadeOut();
+                    }
+                } else if(todo == 'fadeIn') {
+                    if (leavingSection == section && direction == directionTo) {
+                        $(selector).fadeIn();
+                    }
+                } else if(todo == 'addClass') {
+                    if (leavingSection == section && direction == directionTo) {
+                        $(selector).addClass(className);
+                    }
+                } else if(todo == 'removeClass') {
+                    if (leavingSection == section && direction == directionTo) {
+                        $(selector).removeClass(className);
+                    }
+                }
             }
 
-            if (leavingSection == 2 && direction == 'up') {
-                $('.sections-title1').fadeOut();
-            }
+            leaveSection(2, 'up', '.sections-title1', 'fadeOut');
+            leaveSection(3, 'up', '.sections-title1', 'removeClass', 'transp');
 
-            if (leavingSection >= 3 && leavingSection <= 9) {
-                $('.sections-title1').addClass('transp');
-                $('.sections-subtitle1').fadeIn();
-            }
+            leaveSection(3, 'up', '.sections-subtitle1', 'removeClass', 'animated');
 
-            if (leavingSection == 3 && direction == 'up') {
-                $('.sections-title1').removeClass('transp');
-            }
+            leaveSection(6, 'up', '.sections-subtitle1', 'fadeIn');
+            leaveSection(6, 'up', '.sections-subtitle1', 'addClass', 'animated');
+            leaveSection(6, 'up', '.sections-subtitle1', 'removeClass', 'after-animated');
+            leaveSection(6, 'up', '.sections-subtitle2', 'fadeOut');
 
-            if (leavingSection == 6 && direction == 'up') {
-                $('.sections-subtitle1').fadeIn();
-                $('.sections-subtitle1').addClass('animated');
-                $('.sections-subtitle1').removeClass('after-animated');
-                $('.sections-subtitle2').fadeOut();
-            }
+            leaveSection(8, 'up', '.sections-subtitle2', 'fadeIn');
+            leaveSection(8, 'up', '.sections-subtitle2', 'addClass', 'animated');
+            leaveSection(8, 'up', '.sections-subtitle2', 'removeClass', 'after-animated');
+            leaveSection(8, 'up', '.sections-subtitle3', 'fadeOut');
 
-            if (leavingSection == 8 && direction == 'up') {
-                $('.sections-subtitle2').fadeIn();
-                $('.sections-subtitle2').addClass('animated');
-                $('.sections-subtitle2').removeClass('after-animated');
-                $('.sections-subtitle3').fadeOut();
-            }
+            leaveSection(10, 'up', '.sections-title2', 'fadeOut');
 
-            if (leavingSection == 10 && direction == 'up') {
-                $('.sections-title2').fadeOut();
-            }
+            leaveSection(11, 'up', '.sections-title2', 'removeClass', 'transp');
 
-            if (leavingSection == 11 && direction == 'up') {
-                $('.sections-title2').removeClass('transp');
-            }
+            leaveSection(13, 'up', '.sections-title3', 'fadeOut');
+            leaveSection(13, 'up', '.sections-subtitle1', 'removeClass', 'animated');
 
-            if (leavingSection == 13 && direction == 'up') {
-                $('.sections-title3').fadeOut();
-                $('.sections-subtitle1').removeClass('animated');
-            }
+            leaveSection(14, 'up', '.sections-title3', 'removeClass', 'transp');
 
-            if (leavingSection == 14 && direction == 'up') {
-                $('.sections-title3').removeClass('transp');
-            }
+            leaveSection(16, 'up', '.sections-title4', 'fadeOut');
+            leaveSection(18, 'up', '.sections-title5', 'fadeOut');
+            leaveSection(20, 'up', '.sections-title6', 'fadeOut');
 
-            if (leavingSection == 16 && direction == 'up') {
-                $('.sections-title4').fadeOut();
-            }
+            leaveSection(17, 'up', '.sections-title4', 'removeClass', 'transp');
+            leaveSection(19, 'up', '.sections-title5', 'removeClass', 'transp');
+            leaveSection(21, 'up', '.sections-title6', 'removeClass', 'transp');
 
-            if (leavingSection == 18 && direction == 'up') {
-                $('.sections-title5').fadeOut();
-            }
+            // if (leavingSection >= 3 && leavingSection <= 9) {
+            //     $('.sections-title1').addClass('transp');
+            //     $('.sections-subtitle1').fadeIn();
+            // }
 
-            if (leavingSection == 20 && direction == 'up') {
-                $('.sections-title6').fadeOut();
-            }
+            leaveSection(2, 'down', '.sections-title1', 'addClass', 'transp');
 
-            if (leavingSection == 17 && direction == 'up') {
-                $('.sections-title4').removeClass('transp');
-            }
+            leaveSection(5, 'down', '.sections-subtitle1', 'removeClass', 'animated');
+            leaveSection(7, 'down', '.sections-subtitle2', 'removeClass', 'animated');
 
-            if (leavingSection == 19 && direction == 'up') {
-                $('.sections-title5').removeClass('transp');
-            }
+            leaveSection(5, 'down', '.sections-subtitle2', 'addClass', 'animated');
+            leaveSection(7, 'down', '.sections-subtitle3', 'addClass', 'animated');
 
-            if (leavingSection == 21 && direction == 'up') {
-                $('.sections-title6').removeClass('transp');
-            }
+            leaveSection(5, 'down', '.sections-subtitle1', 'addClass', 'after-animated');
+            leaveSection(7, 'down', '.sections-subtitle2', 'addClass', 'after-animated');
 
-            if (leavingSection == 2 && direction == 'down') {
-                $('.sections-title1').addClass('transp');
-            }
+            leaveSection(5, 'down', '.sections-subtitle1', 'fadeOut');
+            leaveSection(7, 'down', '.sections-subtitle2', 'fadeOut');
+            leaveSection(9, 'down', '.sections-subtitle3', 'fadeOut');
 
-            if (leavingSection == 5 && direction == 'down') {
-                $('.sections-subtitle1').removeClass('animated');
-                $('.sections-subtitle1').addClass('after-animated');
-                $('.sections-subtitle1').fadeOut();
-                $('.sections-subtitle2').fadeIn();
-                $('.sections-subtitle2').addClass('animated');
-            }
+            leaveSection(5, 'down', '.sections-subtitle2', 'fadeIn');
+            leaveSection(7, 'down', '.sections-subtitle3', 'fadeIn');
 
-            if (leavingSection == 7 && direction == 'down') {
-                $('.sections-subtitle2').removeClass('animated');
-                $('.sections-subtitle2').addClass('after-animated');
-                $('.sections-subtitle2').fadeOut();
-                $('.sections-subtitle3').fadeIn();
-                $('.sections-subtitle3').addClass('animated');
-            }
+            leaveSection(9, 'down', '.sections-title1', 'fadeOut');
+            leaveSection(12, 'down', '.sections-title2', 'fadeOut');
+            leaveSection(15, 'down', '.sections-title3', 'fadeOut');
+            leaveSection(17, 'down', '.sections-title4', 'fadeOut');
+            leaveSection(19, 'down', '.sections-title5', 'fadeOut');
+            leaveSection(21, 'down', '.sections-title6', 'fadeOut');
 
-            if (leavingSection == 9 && direction == 'down') {
-                $('.sections-title1').fadeOut();
-                $('.sections-subtitle3').fadeOut();
-            }
-
-            if (leavingSection == 10 && direction == 'down') {
-                $('.sections-title2').addClass('transp');
-            }
-            if (leavingSection == 12 && direction == 'down') {
-                $('.sections-title2').fadeOut();
-            }
-            if (leavingSection == 13 && direction == 'down') {
-                $('.sections-title3').addClass('transp');
-            }
-            if (leavingSection == 15 && direction == 'down') {
-                $('.sections-title3').fadeOut();
-            }
-
-            if (leavingSection == 16 && direction == 'down') {
-                $('.sections-title4').addClass('transp');
-            }
-            if (leavingSection == 17 && direction == 'down') {
-                $('.sections-title4').fadeOut();
-            }
-
-            if (leavingSection == 18 && direction == 'down') {
-                $('.sections-title5').addClass('transp');
-            }
-            if (leavingSection == 19 && direction == 'down') {
-                $('.sections-title5').fadeOut();
-            }
-
-            if (leavingSection == 20 && direction == 'down') {
-                $('.sections-title6').addClass('transp');
-            }
-            if (leavingSection == 21 && direction == 'down') {
-                $('.sections-title6').fadeOut();
-            }
+            leaveSection(10, 'down', '.sections-title2', 'addClass', 'transp');
+            leaveSection(13, 'down', '.sections-title3', 'addClass', 'transp');
+            leaveSection(16, 'down', '.sections-title4', 'addClass', 'transp');
+            leaveSection(18, 'down', '.sections-title5', 'addClass', 'transp');
+            leaveSection(20, 'down', '.sections-title6', 'addClass', 'transp');
         },
         css3: true,
         scrollingSpeed: 1000,
