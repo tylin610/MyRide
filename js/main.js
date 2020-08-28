@@ -129,31 +129,31 @@ $(function() {
         });
     }
 
-    var benefitSlider = $('.benefit__slider');
-    benefitSlider.owlCarousel({
-        items: 1,
-        dots: false,
-    });
-    benefitSlider.on('changed.owl.carousel', function(event) {
-        var item = event.item.index;
-        $('#benefitCount').text((item + 1));
-        if (item == 0) {
-            $('.benefit-left').fadeOut();
-        } else {
-            $('.benefit-left').fadeIn();
-        }
-        if (item == 5) {
-            $('.benefit-right').fadeOut();
-        } else {
-            $('.benefit-right').fadeIn();
-        }
-    });
-    $('.benefit-right').click(function() {
-        benefitSlider.trigger('next.owl.carousel');
-    });
-    $('.benefit-left').click(function() {
-        benefitSlider.trigger('prev.owl.carousel');
-    });
+    // var benefitSlider = $('.benefit__slider');
+    // benefitSlider.owlCarousel({
+    //     items: 1,
+    //     dots: false,
+    // });
+    // benefitSlider.on('changed.owl.carousel', function(event) {
+    //     var item = event.item.index;
+    //     $('#benefitCount').text((item + 1));
+    //     if (item == 0) {
+    //         $('.benefit-left').fadeOut();
+    //     } else {
+    //         $('.benefit-left').fadeIn();
+    //     }
+    //     if (item == 5) {
+    //         $('.benefit-right').fadeOut();
+    //     } else {
+    //         $('.benefit-right').fadeIn();
+    //     }
+    // });
+    // $('.benefit-right').click(function() {
+    //     benefitSlider.trigger('next.owl.carousel');
+    // });
+    // $('.benefit-left').click(function() {
+    //     benefitSlider.trigger('prev.owl.carousel');
+    // });
 
     var trenerSlider = $('.trener__slider');
     trenerSlider.owlCarousel({
@@ -208,5 +208,74 @@ $(function() {
             $('.menu').css('visibility', 'hidden');
         }
     });
+
+    var slideIndex = 1;
+
+    function plusSlide() {
+        showSlides(slideIndex += 1);
+    }
+
+    function minusSlide() {
+        showSlides(slideIndex -= 1);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName('benefit__item');
+        if (n > slides.length) {
+            slideIndex = 1
+        } 
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for(i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('showed');
+        }
+        slides[slideIndex - 1].classList.add('showed');
+    }
+
+    $('.benefit-right').on('click', function(e) {
+        e.preventDefault();
+        plusSlide();
+        console.log(slideIndex)
+
+        $('#benefitCount').text((slideIndex));
+        if (slideIndex == 1) {
+            $('.benefit-left').fadeOut();
+        } else {
+            $('.benefit-left').fadeIn();
+        }
+        if (slideIndex == 6) {
+            $('.benefit-right').fadeOut();
+        } else {
+            $('.benefit-right').fadeIn();
+        }
+    });
+    $('.benefit-left').on('click', function(e) {
+        e.preventDefault();
+        minusSlide()
+        console.log(slideIndex)
+
+        $('#benefitCount').text((slideIndex));
+        if (slideIndex == 1) {
+            $('.benefit-left').fadeOut();
+        } else {
+            $('.benefit-left').fadeIn();
+        }
+        if (slideIndex == 6) {
+            $('.benefit-right').fadeOut();
+        } else {
+            $('.benefit-right').fadeIn();
+        }
+    });
+
+    // function counter() {
+    //     if (a )
+    //     return counter();
+    // }
 
 });
