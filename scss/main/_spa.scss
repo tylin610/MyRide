@@ -1,9 +1,10 @@
 .spa__wr {
-    padding: 140px 15px 50px;
-    height: 100%;
+    padding: 0 15px;
+    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     h2 {
         margin-bottom: 40px;
     }
@@ -64,6 +65,9 @@
 }
 
 .spa__subtext {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
     p {
         font-weight: normal;
         font-size: 16px;

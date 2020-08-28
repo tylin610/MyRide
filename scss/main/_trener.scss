@@ -1,7 +1,10 @@
 .trener {
     .trener__wr {
-        height: 100%;
-        padding: 140px 15px 100px;
+        height: 100vh;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     h2 {
         margin-bottom: 40px;

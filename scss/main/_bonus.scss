@@ -1,5 +1,5 @@
 .bonus__wr {
-    padding: 140px 15px 120px;
+    padding: 0 15px;
 }
 
 .bonus__inner {
@@ -45,6 +45,12 @@
     justify-content: center;
     height: 500px;
     position: relative;
+    img {
+        &:first-child {
+            position: relative;
+            z-index: 3;
+        }
+    }
     .bonus__img1 {
         position: absolute;
         top: 20%;
