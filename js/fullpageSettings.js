@@ -201,6 +201,7 @@ $(function () {
         controlArrows: false,
         navigation: true,
         navigationPosition: 'right',
+        scrollOverflow: true
         // navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
     });
 
