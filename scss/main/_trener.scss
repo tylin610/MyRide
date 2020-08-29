@@ -143,6 +143,9 @@
 }
 
 @media (max-width: 514px) {
+    .trener .trener__wr {
+        padding-top: 30px;
+    }
     .trener__slider-all {
         height: 32px;
         max-width: 113px;
@@ -158,5 +161,8 @@
                 font-size: 14px;
             }
         }
+    }
+    .trener__slider-control {
+        margin-bottom: 10px;
     }
 }

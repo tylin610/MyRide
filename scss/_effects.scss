@@ -475,7 +475,7 @@
         }
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .sections-subtitle1, .sections-subtitle2, .sections-subtitle3 {
         top: 27%;
         max-width: 100%;
@@ -504,8 +504,8 @@
     }
 }
 
-@media (max-width: 350px) {
-    .sections-title1, .sections-title2, .sections-title3, .sections-title4, .sections-title5, .sections-title6.transp {
-        top: 12%;
-    }
-}
+// @media (max-width: 350px) {
+//     .sections-title1, .sections-title2, .sections-title3, .sections-title4, .sections-title5, .sections-title6.transp {
+//         top: 12%;
+//     }
+// }

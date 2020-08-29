@@ -97,7 +97,6 @@ $(function () {
             var leavingSection = origin.index + 1;
             $('.section:nth-child(' + leavingSection + ')').removeClass('effect');
             $('.section:nth-child(' + leavingSection + ')').addClass('after-effect');
-            console.log(leavingSection);
 
             // section - Num of SECTION
             // directionTo - up,down

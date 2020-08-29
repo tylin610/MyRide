@@ -128,7 +128,16 @@
         width: 100%;
     }
     .bonus__wr {
-        padding-top: 72px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .owl-carousel .owl-stage-outer {
+            overflow: visible;
+        }
+    }
+    .bonus__item-img .bonus__img1, .bonus__item-img .bonus__img2, .bonus__item-img .bonus__img3, .bonus__item-img .bonus__img4 {
+        width: 10% !important;
     }
 }
 

@@ -549,8 +549,9 @@
             padding: 0;
         }
         h3 {
+            position: static;
             order: 2;
-            font-size: 70px;
+            font-size: 40px;
             text-align: left;
             margin-bottom: 16px;
         }
@@ -593,6 +594,18 @@
     }
     .section14 h2 {
         font-size: 45px;
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .effect__wr {
+        padding-top: 170px;
+    }
+}
+@media (max-width: 600px) {
+    .effect__wr {
+        padding-top: 90px;
     }
 }
 
@@ -672,12 +685,13 @@
         img {
             width: 100%;
             max-width: 100%;
-            &:nth-child(2) {
-                display: none;
-            }
+            
             &:last-child {
                 display: block;
             }
+        }
+        .mob-dn {
+            display: none !important;
         }
     }
     .section4 h2 {
@@ -733,10 +747,6 @@
     .effect__img {
         zoom: 1 !important;
     }
-    .benefit__wr .benefit__slider {
-        transform: scale(1) !important;
-        bottom: 0px !important;
-    }
     .bike__wr h2 {
         margin-bottom: 30px !important;
     }
@@ -755,7 +765,7 @@
     .spa__slider {
         zoom: 1;
     }
-    .spa__subtext {
-        bottom: -45px !important;
+    .index__inner h3 {
+        top: 0 !important;
     }
 }

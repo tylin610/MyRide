@@ -103,9 +103,6 @@
         text-transform: uppercase;
         color: #FFFFFF;
     }
-    .spa__wr {
-        justify-content: flex-start;
-    }
     .spa__subtext {
         position: relative;
         bottom: -150px;
@@ -137,9 +134,18 @@
         top: -20px;
     }
     .spa__subtext {
-        bottom: -35px;
+        bottom: -100px;
         p {
             font-size: 11px;
         }
+    }
+}
+
+@media (max-width: 514px) {
+    .spa__subtext {
+        bottom: -60px;
+    }
+    .spa__slider-arrows {
+        margin-bottom: 0;
     }
 }

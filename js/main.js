@@ -82,7 +82,7 @@ $(function() {
             $(this).addClass('active').siblings().removeClass('active'); 
         });
     }
-    if (document.documentElement.clientWidth < 1024) {
+    if (document.documentElement.clientWidth <= 1024) {
         $('.spa__item-title').detach();
         $(this).removeClass('active'); 
         $('.effect__inner').owlCarousel({
@@ -241,7 +241,6 @@ $(function() {
     $('.benefit-right').on('click', function(e) {
         e.preventDefault();
         plusSlide();
-        console.log(slideIndex)
 
         $('#benefitCount').text((slideIndex));
         if (slideIndex == 1) {
@@ -257,8 +256,7 @@ $(function() {
     });
     $('.benefit-left').on('click', function(e) {
         e.preventDefault();
-        minusSlide()
-        console.log(slideIndex)
+        minusSlide();
 
         $('#benefitCount').text((slideIndex));
         if (slideIndex == 1) {
