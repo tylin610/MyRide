@@ -39,8 +39,12 @@
     align-items: center;
     justify-content: center;
     margin-right: 38px;
+    height: 64px;
     img {
+        display: block;
         max-width: 100%;
+        max-height: 100%;
+        height: auto;
     }
 }
 
