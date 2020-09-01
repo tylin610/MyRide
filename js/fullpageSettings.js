@@ -198,8 +198,8 @@ $(function () {
         dragAndMove: true,
         dragAndMoveKey: 'YWx2YXJvdHJpZ28uY29tX0EyMlpISmhaMEZ1WkUxdmRtVT0wWUc=',
         controlArrows: false,
-        navigation: true,
-        navigationPosition: 'right',
+        // navigation: true,
+        // navigationPosition: 'right',
         scrollOverflow: true
         // navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
     });
