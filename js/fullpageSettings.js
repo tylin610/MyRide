@@ -39,11 +39,15 @@ $(function () {
             if (indexOfSection > 1 && indexOfSection < 10) {
                 $('.sections-title1').fadeIn();
                 $('.sections-title1').addClass('animated');
+                fullpage_api.setScrollingSpeed(500);
             }
 
             if (indexOfSection > 9 && indexOfSection < 11) {
                 $('.sections-title2').fadeIn();
                 $('.sections-title2').addClass('animated');
+            }
+            if (indexOfSection > 10) {
+                fullpage_api.setScrollingSpeed(1000);
             }
 
             if (indexOfSection >= 3 && indexOfSection <= 9) {

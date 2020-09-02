@@ -707,7 +707,20 @@
     }
     .section4-container p {
         font-size: 14px;
+        bottom: 49px;
     }
+
+    .section4__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        padding-top: 10px;
+        .section4-container {
+            padding-left: 0;
+        }
+    }
+
     .effect__item {
         max-width: 82%;
         height: 84px;
