@@ -782,3 +782,9 @@
         top: 0 !important;
     }
 }
+
+@media (max-width: 375px) {
+    .section4-img {
+        padding-top: 35px;
+    }
+}
