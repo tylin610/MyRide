@@ -169,12 +169,6 @@
     position: relative;
     img {
         max-width: 100%;
-        &:first-child {
-            display: block;
-        }
-        &:last-child {
-            display: none;
-        }
     }
 }
 
@@ -401,6 +395,20 @@
     background-size: cover;
 }
 
+.section4-img {
+    z-index: 1;
+    margin-left: 720px;
+    img {
+        z-index: 1;
+    }
+}
+
+@media (max-width: 1600px) {
+    .section4-img {
+        margin-left: 420px;
+    }
+}
+
 // Fixes
 @media (max-height: 1440px) {
     .section.effect .bike__inner h3, .section.effect .index__inner h3 {
@@ -595,7 +603,9 @@
     .section14 h2 {
         font-size: 45px;
     }
-    
+    .section4-img {
+        margin-left: 240px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -646,6 +656,13 @@
     }
 }
 
+@media (max-width: 769px) {
+    .section4-img {
+        margin-left: 100px;
+    }
+}
+
+
 @media (max-width: 514px) {
     .preload .circular-progress-bar .progress-percentage {
         font-size: 68px !important;
@@ -685,10 +702,6 @@
         img {
             width: 100%;
             max-width: 100%;
-            
-            &:last-child {
-                display: block;
-            }
         }
         .mob-dn {
             display: none !important;
@@ -707,7 +720,7 @@
     }
     .section4-container p {
         font-size: 14px;
-        bottom: 49px;
+        bottom: -25px;
     }
 
     .section4__inner {
@@ -778,13 +791,13 @@
     .spa__slider {
         zoom: 1;
     }
-    .index__inner h3 {
-        top: 0 !important;
-    }
 }
 
 @media (max-width: 375px) {
     .section4-img {
         padding-top: 35px;
+    }
+    .section4__inner {
+        overflow: hidden;
     }
 }

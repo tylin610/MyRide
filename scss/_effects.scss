@@ -477,9 +477,34 @@
 }
 @media (max-width: 1024px) {
     .sections-subtitle1, .sections-subtitle2, .sections-subtitle3 {
-        top: 27%;
+        top: 22%;
         max-width: 100%;
         font-size: 36px;
+    }
+    .sections-title1, .sections-title2, .sections-title3, .sections-title4, .sections-title5, .sections-title6 {
+        text-align: left;
+        max-width: calc(100% - 30px);
+    }
+    .section.effect {
+        .section4-container p {
+            &::before {
+                transition: all .3s linear;
+            }
+        }
+    }
+    .section.after-effect {
+        background-position: center 300px;
+        transition: background-position 1s linear;
+        .efTitle1 {
+            transition: all .3s linear;
+            transform: translate(0, 405px);
+            opacity: 0;
+        }
+        .section4-container {
+            opacity: 0;
+            transform: translate(0px, 800px);
+            transition: all 1s linear;
+        }
     }
 }
 // @media (max-width: 767px) {
@@ -492,6 +517,10 @@
 // }
 
 @media (max-width: 514px) {
+    .section {
+        max-height: 100vh;
+        overflow: hidden;
+    }
     .sections-title1, .sections-title2, .sections-title3, .sections-title4, .sections-title5, .sections-title6 {
         font-size: 20px;
         &.transp {
@@ -499,8 +528,11 @@
         }
     }
     .sections-subtitle1, .sections-subtitle2, .sections-subtitle3 {
-        top: 19%;
+        top: 23%;
         font-size: 20px;
+    }
+    .sections-title1.transp,.sections-title2.transp,.sections-title3.transp,.sections-title4.transp,.sections-title5.transp,.sections-title6.transp {
+        top: 17%;
     }
 }
 
