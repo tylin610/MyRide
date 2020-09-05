@@ -20,6 +20,19 @@ $(document).ready(function () {
         $('.video__inner').append('<iframe src="https://www.youtube.com/embed/R4Yz1oZU0ZI?autoplay=1&amp;loop=1&amp;&amp;playlist=R4Yz1oZU0ZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     });
 
+    var targetSlider = $('.target__slider');
+    targetSlider.owlCarousel({
+        items: 6,
+        autoWidth: true,
+        dots: false,
+    });
+    $('.target-right').click(function() {
+        targetSlider.trigger('next.owl.carousel');
+    });
+    $('.target-left').click(function() {
+        targetSlider.trigger('prev.owl.carousel');
+    });
+
     if (document.documentElement.clientWidth < 1506) {
         $('.reservation-row').owlCarousel({
             items: 1,
@@ -72,12 +85,12 @@ $(document).ready(function () {
                 }
             }
         });
-        $('.subscription__right').owlCarousel({
-            items: 1,
-            margin: 20,
-            dots: true,
-            autoHeight: true
-        });
+        // $('.subscription__right').owlCarousel({
+        //     items: 1,
+        //     margin: 20,
+        //     dots: true,
+        //     autoHeight: true
+        // });
     }
 
     if (document.documentElement.clientWidth < 515) {

@@ -152,7 +152,7 @@
 
 @media (max-width: 514px) {
     .index__inner h3 {
-        font-size: 20px;
+        font-size: 14px;
         position: relative;
         top: 10px;
     }
@@ -164,5 +164,8 @@
     .mw212 {
         max-width: 212px !important;
         margin: -20px auto !important;
+    }
+    .index__wr {
+        padding-top: 50px;
     }
 }

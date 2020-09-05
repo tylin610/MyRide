@@ -97,6 +97,7 @@ $(function () {
                 $('.header').slideDown();
             }
         },
+        
         onLeave: function (origin, destination, direction) {
             var leavingSection = origin.index + 1;
             $('.section:nth-child(' + leavingSection + ')').removeClass('effect');
@@ -126,6 +127,13 @@ $(function () {
                         $(selector).removeClass(className);
                     }
                 }
+            }
+
+            if (leavingSection == 21 && direction == "down") {
+                fullpage_api.setResponsive(true);
+            }
+            if (leavingSection == 22 && direction == "up") {
+                fullpage_api.setResponsive(false);
             }
 
             leaveSection(2, 'up', '.sections-title1', 'fadeOut');
@@ -204,7 +212,6 @@ $(function () {
         controlArrows: false,
         // navigation: true,
         // navigationPosition: 'right',
-        scrollOverflow: true
         // navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
     });
 
