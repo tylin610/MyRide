@@ -14,12 +14,6 @@ $(document).ready(function () {
         }
     });
 
-    $('.video__play').on('click', function (e) {
-        e.preventDefault();
-        $('.video-wrap').fadeOut();
-        $('.video__inner').append('<iframe src="https://www.youtube.com/embed/R4Yz1oZU0ZI?autoplay=1&amp;loop=1&amp;&amp;playlist=R4Yz1oZU0ZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-    });
-
     var targetSlider = $('.target__slider');
     targetSlider.owlCarousel({
         items: 6,
