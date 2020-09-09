@@ -412,6 +412,14 @@
 }
 
 // Fixes
+#fp-nav ul li .fp-tooltip.fp-right {
+    right: 30px;
+    overflow: visible;
+}
+#fp-nav {
+    transform: translate(0%, -50%);
+    margin: 0;
+}
 @media (max-height: 1440px) {
     .section.effect .bike__inner h3, .section.effect .index__inner h3 {
         padding-top: 50px;
@@ -618,6 +626,9 @@
 @media (max-width: 600px) {
     .effect__wr {
         padding-top: 90px;
+    }
+    #fp-nav {
+        right: 5px !important;
     }
 }
 
