@@ -117,7 +117,8 @@
 .rate__inner {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .rate__item {
@@ -126,6 +127,11 @@
     border: 1px solid #32343A;
     text-align: center;
     padding-bottom: 16px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
 }
 
 .rate__item-title {
@@ -197,6 +203,12 @@
     }
 }
 
+@media (max-width: 1366px) {
+    .rate__item {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
 @media (max-width: 1279px) {
     .profile__inner {
         flex-wrap: wrap;
@@ -232,8 +244,20 @@
     .profile__person {
         max-width: 100%;
     }
+    .rate__item {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        width: auto;
+        max-width: 100%;
+    }
 }
 
+@media (max-width: 580px) {
+    .rate__item {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
 @media (max-width: 514px) {
     .profile h1 {
         font-size: 20px;

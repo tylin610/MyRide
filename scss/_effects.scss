@@ -43,7 +43,7 @@
     }
     .section4-container p::before {
         max-width: 0;
-        transition: all .7s linear;
+        transition: all .3s linear;
     }
     .spa__item::before {
         max-height: 0;
@@ -103,12 +103,12 @@
             .bonus__item-img {
                 opacity: 1;
                 transition: all .4s linear;
-                transition-delay: 2.1s;
+                transition-delay: .7s;
             }
             .bonus__item-text {
                 opacity: 1;
                 transition: all .4s linear;
-                transition-delay: 2.8s;
+                transition-delay: 1.4s;
             }
         }
     }
@@ -129,13 +129,13 @@
             right: 5%;
             opacity: 1;
             transition: all .4s linear;
-            transition-delay: 2.4s;
+            transition-delay: 1s;
         }
         .bonus__img4 {
             left: 15%;
             opacity: 1;
             transition: all .4s linear;
-            transition-delay: 2.4s;
+            transition-delay: 1s;
         }
     }
     .trener__wr {

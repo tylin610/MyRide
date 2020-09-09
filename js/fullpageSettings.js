@@ -7,6 +7,79 @@ $(function () {
             $('.section').removeClass('effect');
             $('.section').removeClass('after-effect');
             $('.section:nth-child(' + indexOfSection + ')').addClass('effect');
+            
+            if (indexOfSection == 12) {
+                console.log(indexOfSection);
+                var slideIndex = 1;
+
+                function plusSlide() {
+                    showSlides(slideIndex += 1);
+                }
+            
+                function minusSlide() {
+                    showSlides(slideIndex -= 1);
+                }
+            
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                setInterval(function() {
+                    $('.benefit-right').click();
+                }, 3500);
+            
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName('benefit__item');
+                    if (n > slides.length) {
+                        slideIndex = 1
+                    } 
+                    if (n < 1) {
+                        slideIndex = slides.length;
+                    }
+                    for(i = 0; i < slides.length; i++) {
+                        slides[i].classList.remove('showed');
+                    }
+                    slides[slideIndex - 1].classList.add('showed');
+                }
+            
+                $('.benefit-right').on('click', function(e) {
+                    e.preventDefault();
+                    plusSlide();
+            
+                    $('#benefitCount').text((slideIndex));
+                    if (slideIndex > 1) {
+                        $('.benefit-right').removeClass("blinking");
+                    } else {
+                        $('.benefit-right').addClass("blinking");
+                    }
+                });
+                $('.benefit-left').on('click', function(e) {
+                    e.preventDefault();
+                    minusSlide();
+            
+                    $('#benefitCount').text((slideIndex));
+                    if (slideIndex > 1) {
+                        $('.benefit-right').removeClass("blinking");
+                    } else {
+                        $('.benefit-right').addClass("blinking");
+                    }
+                });
+            }
+            if (indexOfSection == 15) {
+                var count = 0;
+                setInterval(function() {
+                    if(count > 1) count = 0;
+                    count++;
+                    if (count == 1) {
+                        $('.index__item:nth-child(1)').addClass("active");
+                        $('.index__item:nth-child(2)').removeClass("active");
+                    } else {
+                        $('.index__item:nth-child(2)').addClass("active");
+                        $('.index__item:nth-child(1)').removeClass("active");
+                    }
+                }, 3000);
+            }
 
             // section - Num of SECTION
             // selectos - element to change

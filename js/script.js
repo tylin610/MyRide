@@ -87,7 +87,7 @@ $(document).ready(function () {
         // });
     }
 
-    if (document.documentElement.clientWidth < 515) {
+    if (document.documentElement.clientWidth < 581) {
         $('.rate__inner').owlCarousel({
             items: 1,
             margin: 20,
