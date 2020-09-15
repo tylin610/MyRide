@@ -27,14 +27,6 @@ $(document).ready(function () {
         targetSlider.trigger('prev.owl.carousel');
     });
 
-    if (document.documentElement.clientWidth < 1506) {
-        $('.reservation-row').owlCarousel({
-            items: 1,
-            margin: 17,
-            autoWidth: true,
-            dots: false,
-        });
-    }
     if (document.documentElement.clientWidth < 1025) {
         $('.steps__inner').owlCarousel({
             items: 1,
