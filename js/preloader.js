@@ -244,7 +244,7 @@ $(document).ready(function () {
         function img_load() {
             progress += percent;
             loadedImg++;
-            if (progress >= 100 || loadedImg == imagesCount) {
+            if (progress == 100 || loadedImg == imagesCount) {
                 preloader.delay(400).fadeOut('slow');
                 dBody.css('overflow', '');
                 setTimeout(function() {
