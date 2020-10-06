@@ -204,6 +204,11 @@ $(function () {
             stoppedSection(5, '.sections-subtitle3', 'fadeIn');
             stoppedSection(6, '.sections-subtitle3', 'fadeIn');
 
+            if (indexOfSection == 19) {
+                fullpage_api.setResponsive(true);
+            } else {
+                fullpage_api.setResponsive(false);
+            }
 
 
 
@@ -265,7 +270,7 @@ $(function () {
 
             leaveSection(11, 'up', '.sections-title3', 'fadeOut');
             leaveSection(10, 'down', '.sections-title3', 'addClass', 'transp');
-            leaveSection(13, 'down', '.sections-title3', 'fadeOut');
+            leaveSection(12, 'down', '.sections-title3', 'fadeOut');
 
             leaveSection(13, 'up', '.sections-title4', 'fadeOut');
             leaveSection(14, 'up', '.sections-title4', 'removeClass', 'transp');
@@ -325,6 +330,8 @@ $(function () {
 });
 
 var slideIndex = 1;
+var flagSlider = true;
+var timeSlide;
 
 function plusSlide() {
     showSlides(slideIndex += 1);
@@ -338,9 +345,14 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-var timeSlide = setInterval(function () {
-    $('.benefit-right').click();
-}, 3500);
+
+function startAutoPlay() {
+    timeSlide = setInterval(function () {
+        if(flagSlider) {
+            plusSlide();
+        }
+    }, 3500);
+}
 
 function showSlides(n) {
     var i;
@@ -355,27 +367,27 @@ function showSlides(n) {
         slides[i].classList.remove('showed');
     }
     slides[slideIndex - 1].classList.add('showed');
+
+    $('#benefitCount').text((slideIndex));
+    if (slideIndex > 1) {
+        $('.benefit-right').removeClass("blinking");
+    } else {
+        $('.benefit-right').addClass("blinking");
+    }
 }
+
+startAutoPlay();
 
 $('.benefit-right').on('click', function (e) {
     e.preventDefault();
     plusSlide();
-
-    $('#benefitCount').text((slideIndex));
-    if (slideIndex > 1) {
-        $('.benefit-right').removeClass("blinking");
-    } else {
-        $('.benefit-right').addClass("blinking");
-    }
+    flagSlider = false;
 });
 $('.benefit-left').on('click', function (e) {
     e.preventDefault();
     minusSlide();
-
-    $('#benefitCount').text((slideIndex));
-    if (slideIndex > 1) {
-        $('.benefit-right').removeClass("blinking");
-    } else {
-        $('.benefit-right').addClass("blinking");
-    }
+    flagSlider = false;
 });
+
+
+// console.log($('.fp-right ul li'))

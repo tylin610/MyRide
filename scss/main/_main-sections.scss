@@ -1,3 +1,6 @@
+.section23 {
+    overflow: hidden;
+}
 .preload {
     position: fixed;
     top: 0;
@@ -405,6 +408,7 @@
     }
 }
 
+
 @media (max-width: 1600px) {
     .section4-img {
         margin-left: 420px;
@@ -412,14 +416,6 @@
 }
 
 // Fixes
-#fp-nav ul li .fp-tooltip.fp-right {
-    right: 30px;
-    overflow: visible;
-}
-#fp-nav {
-    transform: translate(0%, -50%);
-    margin: 0;
-}
 @media (max-height: 1440px) {
     .section.effect .bike__inner h3, .section.effect .index__inner h3 {
         padding-top: 50px;
@@ -466,9 +462,6 @@
     }
     .spa__slider {
         zoom: .6;
-    }
-    .spa__wr {
-        padding-top: 72px !important;
     }
     .spa__subtext {
         position: relative;
@@ -628,7 +621,7 @@
         padding-top: 90px;
     }
     #fp-nav {
-        right: 5px !important;
+        right: 0px !important;
     }
 }
 
@@ -813,4 +806,17 @@
     .section4__inner {
         overflow: hidden;
     }
+}
+
+@media screen and (min-width: 1000px) and (max-height: 700px) {
+    .section4-container {
+        position: relative;
+        top: 100px;
+    }
+    .sections-subtitle1.animated, .sections-subtitle2.animated, .sections-subtitle3.animated, .sections-subtitle4.animated {
+        top: 31%;
+    }
+    .sections-title1.transp, .sections-title2.transp, .sections-title3.transp, .sections-title4.transp, .sections-title5.transp, .sections-title6.transp {
+        top: 18% !important;
+    }    
 }

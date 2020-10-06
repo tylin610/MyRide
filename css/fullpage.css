@@ -102,10 +102,10 @@
 }
 
 #fp-nav {
-    margin-top: -32px;
-    top: 50%;
+    bottom: 20px;
     position: fixed;
-    z-index: 100
+    z-index: 100;
+    margin: 0;
 }
 
 #fp-nav.fp-right {
@@ -206,18 +206,25 @@
     display: block;
     opacity: 0;
     cursor: pointer;
-    width: 0
+    width: 0;
+    visibility: hidden;
 }
 
 #fp-nav ul li:hover .fp-tooltip,#fp-nav.fp-show-active a.active+.fp-tooltip {
     -webkit-transition: opacity .2s ease-in;
     transition: opacity .2s ease-in;
     width: auto;
-    opacity: 1
+    opacity: 1;
+    visibility: visible;
 }
 
 #fp-nav ul li .fp-tooltip.fp-right {
-    right: 20px
+    width: auto;
+    max-width: unset;
+    right: auto;
+    left: -10px;
+    overflow: visible;
+    transform: translate(-100%, 0%);
 }
 
 #fp-nav ul li .fp-tooltip.fp-left {

@@ -13,6 +13,7 @@
         text-transform: uppercase;
         color: #FFFFFF;
         max-width: 480px;
+        padding-left: 15px;
     }
 }
 
@@ -24,7 +25,6 @@
     width: 100%;
     max-width: 1490px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
 .bike__img {
@@ -53,6 +53,8 @@
     width: 100%;
     height: 375px;
     max-width: 400px;
+    position: relative;
+    right: 15px;
 }
 
 .bike__text-item {
@@ -108,10 +110,12 @@
         max-width: 100%;
         font-size: 36px;
         margin-bottom: 28px;
+        padding-left: 0;
     }
     .bike__text {
         max-width: 100%;
         height: 106px;
+        position: static;
     }
     .bike__img {
         position: static;

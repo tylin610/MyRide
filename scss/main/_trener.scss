@@ -19,7 +19,10 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 32px;
+    max-width: 1762px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
 }
 
 .trener__slider-all {
