@@ -244,8 +244,8 @@ $(document).ready(function () {
         function img_load() {
             progress += percent;
             loadedImg++;
-            if (progress == 100 || loadedImg == imagesCount) {
-                preloader.delay(400).fadeOut('slow');
+            if (progress === 100 || loadedImg == imagesCount) {
+                preloader.fadeOut('slow');
                 dBody.css('overflow', '');
                 setTimeout(function() {
                     $('.section:nth-child(1)').addClass('firstSetcAnimated');

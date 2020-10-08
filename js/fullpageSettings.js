@@ -7,7 +7,11 @@ $(function () {
             $('.section').removeClass('after-effect');
             $('.section:nth-child(' + indexOfSection + ')').addClass('effect');
 
-            console.log(indexOfSection);
+            if (indexOfSection == 1) {
+                $('.main__video video').get(0).play()
+            } else {
+                $('.main__video video').get(0).pause()
+            }
             if (indexOfSection == 9) {
                 slideIndex = 6;
                 $('.benefit__item').removeClass('showed');
@@ -294,16 +298,6 @@ $(function () {
             leaveSection(4, 'up', '.sections-subtitle2', 'removeClass', 'animated');
             leaveSection(4, 'down', '.sections-subtitle2', 'addClass', 'after-animated');
 
-            // leaveSection(6, 'up', '.sections-subtitle2', 'fadeOut');
-            // leaveSection(8, 'up', '.sections-subtitle2', 'fadeIn');
-            // leaveSection(8, 'up', '.sections-subtitle2', 'addClass', 'animated');
-            // leaveSection(8, 'up', '.sections-subtitle2', 'removeClass', 'after-animated');
-            // leaveSection(7, 'down', '.sections-subtitle2', 'removeClass', 'animated');
-            // leaveSection(5, 'down', '.sections-subtitle2', 'addClass', 'animated');
-            // leaveSection(7, 'down', '.sections-subtitle2', 'addClass', 'after-animated');
-            // leaveSection(7, 'down', '.sections-subtitle2', 'fadeOut');
-            // leaveSection(5, 'down', '.sections-subtitle2', 'fadeIn');
-
             leaveSection(5, 'up', '.sections-subtitle3', 'fadeOut');
             leaveSection(4, 'down', '.sections-subtitle3', 'addClass', 'animated');
             leaveSection(6, 'down', '.sections-subtitle3', 'fadeOut');
@@ -388,6 +382,3 @@ $('.benefit-left').on('click', function (e) {
     minusSlide();
     flagSlider = false;
 });
-
-
-// console.log($('.fp-right ul li'))

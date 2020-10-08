@@ -129,32 +129,6 @@ $(function() {
         });
     }
 
-    // var benefitSlider = $('.benefit__slider');
-    // benefitSlider.owlCarousel({
-    //     items: 1,
-    //     dots: false,
-    // });
-    // benefitSlider.on('changed.owl.carousel', function(event) {
-    //     var item = event.item.index;
-    //     $('#benefitCount').text((item + 1));
-    //     if (item == 0) {
-    //         $('.benefit-left').fadeOut();
-    //     } else {
-    //         $('.benefit-left').fadeIn();
-    //     }
-    //     if (item == 5) {
-    //         $('.benefit-right').fadeOut();
-    //     } else {
-    //         $('.benefit-right').fadeIn();
-    //     }
-    // });
-    // $('.benefit-right').click(function() {
-    //     benefitSlider.trigger('next.owl.carousel');
-    // });
-    // $('.benefit-left').click(function() {
-    //     benefitSlider.trigger('prev.owl.carousel');
-    // });
-
     var trenerSlider = $('.trener__slider');
     trenerSlider.owlCarousel({
         items: 5,
@@ -208,12 +182,11 @@ $(function() {
             $('.menu').css('visibility', 'hidden');
         }
     });
-
-    
-
-    // function counter() {
-    //     if (a )
-    //     return counter();
-    // }
+    $('.main__video video').height($(window).height());
+    $(document).on('resize',function (event) {
+        $('.main__video video').height($(window).height());
+    });
 
 });
+
+$('.main__video video').get(0).load();
