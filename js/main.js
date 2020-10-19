@@ -6,6 +6,8 @@ $(function () {
         $('.login').fadeOut();
         $('.signin').fadeIn();
         $('.signin').css('display', 'flex');
+        $('.overlay').css('display', 'flex');
+
 
         $('.header-burger').removeClass('active');
         $('.menu').fadeOut();
@@ -18,6 +20,7 @@ $(function () {
         $('.signin').fadeOut();
         $('.login').fadeIn();
         $('.login').css('display', 'flex');
+        $('.overlay').css('display', 'flex');
 
         $('.header-burger').removeClass('active');
         $('.menu').fadeOut();
@@ -29,6 +32,7 @@ $(function () {
         $('.overlay').fadeIn();
         $('.login').fadeIn();
         $('.login').css('display', 'flex');
+        $('.overlay').css('display', 'flex');
 
         $('.header-burger').removeClass('active');
         $('.menu').fadeOut();
@@ -40,6 +44,7 @@ $(function () {
         $('.overlay').fadeIn();
         $('.signin').fadeIn();
         $('.signin').css('display', 'flex');
+        $('.overlay').css('display', 'flex');
 
         $('.header-burger').removeClass('active');
         $('.menu').fadeOut();
@@ -51,6 +56,7 @@ $(function () {
         $('.overlay').fadeIn();
         $('.subscribe').fadeIn();
         $('.subscribe').css('display', 'flex');
+        $('.overlay').css('display', 'flex');
 
         $('.header-burger').removeClass('active');
         $('.menu').fadeOut();
